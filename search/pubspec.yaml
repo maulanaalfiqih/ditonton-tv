@@ -1,4 +1,4 @@
-name: core
+name: search
 description: A new Flutter package project.
 version: 0.0.1
 publish_to: "none"
@@ -11,25 +11,22 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  equatable: ^2.0.2
-  google_fonts: ^3.0.1
-  sqflite: ^2.0.0+3
-  http: ^0.13.3
+  core:
+    path: ../core
   dartz: ^0.10.0-nullsafety.2
-  cached_network_image: ^3.0.0
   provider: ^6.0.3
-  flutter_rating_bar: ^4.0.0
-
-  about:
-    path: ../about
-  search:
-    path: ../search
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  mockito: ^5.0.8
+  build_runner: ^2.0.4
 
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter packages.
 flutter:
 
   # To add assets to your package, add an assets section, like this:
