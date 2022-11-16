@@ -1,7 +1,4 @@
-import 'package:ditonton/data/models/tv/tv_table.dart';
-import 'package:ditonton/domain/entities/tv/genre.dart';
-import 'package:ditonton/domain/entities/tv/tv.dart';
-import 'package:ditonton/domain/entities/tv/tv_detail.dart';
+import 'package:core/core.dart';
 
 final testTv = TV(
   backdropPath: "/xAKMj134XHQVNHLC6rWsccLMenG.jpg",

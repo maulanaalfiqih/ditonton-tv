@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/domain/entities/tv/tv.dart';
-import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart';
+import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

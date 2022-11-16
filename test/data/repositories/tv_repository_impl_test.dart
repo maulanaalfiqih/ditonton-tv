@@ -1,16 +1,8 @@
 import 'dart:io';
-
 import 'package:dartz/dartz.dart';
-import '../../../core/lib/common/exception.dart';
-import 'package:ditonton/data/models/tv/genre_model.dart';
-import 'package:ditonton/data/models/tv/tv_detail_model.dart';
-import 'package:ditonton/data/models/tv/tv_model.dart';
-import 'package:ditonton/data/repositories/tv_repository_impl.dart';
-import 'package:ditonton/domain/entities/tv/tv.dart';
+import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import '../../../core/lib/common/failure.dart';
-
 import '../../dummy_data/tv/dummy_objects.dart';
 import '../../helpers/test_helper.mocks.dart';
 

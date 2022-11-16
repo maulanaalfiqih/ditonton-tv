@@ -1,8 +1,5 @@
 import 'package:dartz/dartz.dart';
-import '../../../../core/lib/common/failure.dart';
-import '../../../../core/lib/common/state_enum.dart';
-import 'package:ditonton/domain/usecases/movie/get_watchlist_movies.dart';
-import 'package:ditonton/presentation/provider/movie/watchlist_movie_notifier.dart';
+import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';

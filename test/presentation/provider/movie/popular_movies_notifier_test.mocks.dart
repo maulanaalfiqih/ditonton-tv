@@ -3,13 +3,10 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i4;
 
+import 'package:core/core.dart' as _i2;
 import 'package:dartz/dartz.dart' as _i3;
-import '../../../../core/lib/common/failure.dart' as _i6;
-import 'package:ditonton/domain/entities/movie/movie.dart' as _i7;
-import 'package:ditonton/domain/repositories/movie_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/movie/get_popular_movies.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -37,7 +34,7 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
 /// A class which mocks [GetPopularMovies].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetPopularMovies extends _i1.Mock implements _i4.GetPopularMovies {
+class MockGetPopularMovies extends _i1.Mock implements _i2.GetPopularMovies {
   MockGetPopularMovies() {
     _i1.throwOnMissingStub(this);
   }
@@ -49,11 +46,11 @@ class MockGetPopularMovies extends _i1.Mock implements _i4.GetPopularMovies {
                   _FakeMovieRepository_0(this, Invocation.getter(#repository)))
           as _i2.MovieRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>> execute() => (super
+  _i4.Future<_i3.Either<_i2.Failure, List<_i2.Movie>>> execute() => (super
           .noSuchMethod(Invocation.method(#execute, []),
               returnValue:
-                  _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>>.value(
-                      _FakeEither_1<_i6.Failure, List<_i7.Movie>>(
+                  _i4.Future<_i3.Either<_i2.Failure, List<_i2.Movie>>>.value(
+                      _FakeEither_1<_i2.Failure, List<_i2.Movie>>(
                           this, Invocation.method(#execute, []))))
-      as _i5.Future<_i3.Either<_i6.Failure, List<_i7.Movie>>>);
+      as _i4.Future<_i3.Either<_i2.Failure, List<_i2.Movie>>>);
 }

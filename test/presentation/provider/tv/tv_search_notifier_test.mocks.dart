@@ -5,12 +5,10 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i5;
 
+import 'package:core/core.dart' as _i2;
 import 'package:dartz/dartz.dart' as _i3;
-import '../../../../core/lib/common/failure.dart' as _i6;
-import 'package:ditonton/domain/entities/tv/tv.dart' as _i7;
-import 'package:ditonton/domain/repositories/tv_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/tv/search_tvs.dart' as _i4;
 import 'package:mockito/mockito.dart' as _i1;
+import 'package:search/domain/usecases/search_tvs.dart' as _i4;
 
 // ignore_for_file: type=lint
 // ignore_for_file: avoid_redundant_argument_values
@@ -48,10 +46,10 @@ class MockSearchTvs extends _i1.Mock implements _i4.SearchTvs {
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i7.TV>>> execute(String? query) =>
+  _i5.Future<_i3.Either<_i2.Failure, List<_i2.TV>>> execute(String? query) =>
       (super.noSuchMethod(Invocation.method(#execute, [query]),
-          returnValue: _i5.Future<_i3.Either<_i6.Failure, List<_i7.TV>>>.value(
-              _FakeEither_1<_i6.Failure, List<_i7.TV>>(
+          returnValue: _i5.Future<_i3.Either<_i2.Failure, List<_i2.TV>>>.value(
+              _FakeEither_1<_i2.Failure, List<_i2.TV>>(
                   this, Invocation.method(#execute, [query])))) as _i5
-          .Future<_i3.Either<_i6.Failure, List<_i7.TV>>>);
+          .Future<_i3.Either<_i2.Failure, List<_i2.TV>>>);
 }

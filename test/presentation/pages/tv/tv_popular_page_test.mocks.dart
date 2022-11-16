@@ -3,14 +3,10 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i6;
-import 'dart:ui' as _i7;
+import 'dart:async' as _i3;
+import 'dart:ui' as _i4;
 
-import '../../../../core/lib/common/state_enum.dart' as _i4;
-import 'package:ditonton/domain/entities/tv/tv.dart' as _i5;
-import 'package:ditonton/domain/usecases/tv/get_popular_tvs.dart' as _i2;
-import 'package:ditonton/presentation/provider/tv/popular_tv_notifier.dart'
-    as _i3;
+import 'package:core/core.dart' as _i2;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -32,7 +28,7 @@ class _FakeGetPopularTvs_0 extends _i1.SmartFake implements _i2.GetPopularTvs {
 /// A class which mocks [PopularTvNotifier].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockPopularTvNotifier extends _i1.Mock implements _i3.PopularTvNotifier {
+class MockPopularTvNotifier extends _i1.Mock implements _i2.PopularTvNotifier {
   MockPopularTvNotifier() {
     _i1.throwOnMissingStub(this);
   }
@@ -44,12 +40,12 @@ class MockPopularTvNotifier extends _i1.Mock implements _i3.PopularTvNotifier {
                   _FakeGetPopularTvs_0(this, Invocation.getter(#getPopularTvs)))
           as _i2.GetPopularTvs);
   @override
-  _i4.RequestState get state => (super.noSuchMethod(Invocation.getter(#state),
-      returnValue: _i4.RequestState.Empty) as _i4.RequestState);
+  _i2.RequestState get state => (super.noSuchMethod(Invocation.getter(#state),
+      returnValue: _i2.RequestState.Empty) as _i2.RequestState);
   @override
-  List<_i5.TV> get tvs =>
-      (super.noSuchMethod(Invocation.getter(#tvs), returnValue: <_i5.TV>[])
-          as List<_i5.TV>);
+  List<_i2.TV> get tvs =>
+      (super.noSuchMethod(Invocation.getter(#tvs), returnValue: <_i2.TV>[])
+          as List<_i2.TV>);
   @override
   String get message =>
       (super.noSuchMethod(Invocation.getter(#message), returnValue: '')
@@ -59,16 +55,16 @@ class MockPopularTvNotifier extends _i1.Mock implements _i3.PopularTvNotifier {
       (super.noSuchMethod(Invocation.getter(#hasListeners), returnValue: false)
           as bool);
   @override
-  _i6.Future<void> fetchPopularTvs() => (super.noSuchMethod(
+  _i3.Future<void> fetchPopularTvs() => (super.noSuchMethod(
       Invocation.method(#fetchPopularTvs, []),
-      returnValue: _i6.Future<void>.value(),
-      returnValueForMissingStub: _i6.Future<void>.value()) as _i6.Future<void>);
+      returnValue: _i3.Future<void>.value(),
+      returnValueForMissingStub: _i3.Future<void>.value()) as _i3.Future<void>);
   @override
-  void addListener(_i7.VoidCallback? listener) =>
+  void addListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#addListener, [listener]),
           returnValueForMissingStub: null);
   @override
-  void removeListener(_i7.VoidCallback? listener) =>
+  void removeListener(_i4.VoidCallback? listener) =>
       super.noSuchMethod(Invocation.method(#removeListener, [listener]),
           returnValueForMissingStub: null);
   @override

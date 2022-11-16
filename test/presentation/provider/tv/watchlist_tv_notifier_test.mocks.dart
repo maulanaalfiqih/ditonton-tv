@@ -5,10 +5,8 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'dart:async' as _i4;
 
+import 'package:core/core.dart' as _i3;
 import 'package:dartz/dartz.dart' as _i2;
-import '../../../../core/lib/common/failure.dart' as _i5;
-import 'package:ditonton/domain/entities/tv/tv.dart' as _i6;
-import 'package:ditonton/domain/usecases/tv/get_watchlist_tvs.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -36,10 +34,10 @@ class MockGetWatchlistTvs extends _i1.Mock implements _i3.GetWatchlistTvs {
   }
 
   @override
-  _i4.Future<_i2.Either<_i5.Failure, List<_i6.TV>>> execute() =>
+  _i4.Future<_i2.Either<_i3.Failure, List<_i3.TV>>> execute() =>
       (super.noSuchMethod(Invocation.method(#execute, []),
-          returnValue: _i4.Future<_i2.Either<_i5.Failure, List<_i6.TV>>>.value(
-              _FakeEither_0<_i5.Failure, List<_i6.TV>>(
+          returnValue: _i4.Future<_i2.Either<_i3.Failure, List<_i3.TV>>>.value(
+              _FakeEither_0<_i3.Failure, List<_i3.TV>>(
                   this, Invocation.method(#execute, [])))) as _i4
-          .Future<_i2.Either<_i5.Failure, List<_i6.TV>>>);
+          .Future<_i2.Either<_i3.Failure, List<_i3.TV>>>);
 }

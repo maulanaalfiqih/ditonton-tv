@@ -3,19 +3,10 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i5;
+import 'dart:async' as _i4;
 
+import 'package:core/core.dart' as _i2;
 import 'package:dartz/dartz.dart' as _i3;
-import '../../../../core/lib/common/failure.dart' as _i6;
-import 'package:ditonton/domain/entities/tv/tv.dart' as _i9;
-import 'package:ditonton/domain/entities/tv/tv_detail.dart' as _i7;
-import 'package:ditonton/domain/repositories/tv_repository.dart' as _i2;
-import 'package:ditonton/domain/usecases/tv/get_tv_detail.dart' as _i4;
-import 'package:ditonton/domain/usecases/tv/get_tv_recommendations.dart' as _i8;
-import 'package:ditonton/domain/usecases/tv/get_watchlist_tvs_status.dart'
-    as _i10;
-import 'package:ditonton/domain/usecases/tv/remove_watchlist_tvs.dart' as _i12;
-import 'package:ditonton/domain/usecases/tv/save_watchlist_tvs.dart' as _i11;
 import 'package:mockito/mockito.dart' as _i1;
 
 // ignore_for_file: type=lint
@@ -42,7 +33,7 @@ class _FakeEither_1<L, R> extends _i1.SmartFake implements _i3.Either<L, R> {
 /// A class which mocks [GetTvDetail].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockGetTvDetail extends _i1.Mock implements _i4.GetTvDetail {
+class MockGetTvDetail extends _i1.Mock implements _i2.GetTvDetail {
   MockGetTvDetail() {
     _i1.throwOnMissingStub(this);
   }
@@ -54,19 +45,19 @@ class MockGetTvDetail extends _i1.Mock implements _i4.GetTvDetail {
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, _i7.TVDetail>> execute(int? id) =>
+  _i4.Future<_i3.Either<_i2.Failure, _i2.TVDetail>> execute(int? id) =>
       (super.noSuchMethod(Invocation.method(#execute, [id]),
-          returnValue: _i5.Future<_i3.Either<_i6.Failure, _i7.TVDetail>>.value(
-              _FakeEither_1<_i6.Failure, _i7.TVDetail>(
-                  this, Invocation.method(#execute, [id])))) as _i5
-          .Future<_i3.Either<_i6.Failure, _i7.TVDetail>>);
+          returnValue: _i4.Future<_i3.Either<_i2.Failure, _i2.TVDetail>>.value(
+              _FakeEither_1<_i2.Failure, _i2.TVDetail>(
+                  this, Invocation.method(#execute, [id])))) as _i4
+          .Future<_i3.Either<_i2.Failure, _i2.TVDetail>>);
 }
 
 /// A class which mocks [GetTvRecommendations].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetTvRecommendations extends _i1.Mock
-    implements _i8.GetTvRecommendations {
+    implements _i2.GetTvRecommendations {
   MockGetTvRecommendations() {
     _i1.throwOnMissingStub(this);
   }
@@ -78,19 +69,19 @@ class MockGetTvRecommendations extends _i1.Mock
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, List<_i9.TV>>> execute(dynamic id) =>
+  _i4.Future<_i3.Either<_i2.Failure, List<_i2.TV>>> execute(dynamic id) =>
       (super.noSuchMethod(Invocation.method(#execute, [id]),
-          returnValue: _i5.Future<_i3.Either<_i6.Failure, List<_i9.TV>>>.value(
-              _FakeEither_1<_i6.Failure, List<_i9.TV>>(
-                  this, Invocation.method(#execute, [id])))) as _i5
-          .Future<_i3.Either<_i6.Failure, List<_i9.TV>>>);
+          returnValue: _i4.Future<_i3.Either<_i2.Failure, List<_i2.TV>>>.value(
+              _FakeEither_1<_i2.Failure, List<_i2.TV>>(
+                  this, Invocation.method(#execute, [id])))) as _i4
+          .Future<_i3.Either<_i2.Failure, List<_i2.TV>>>);
 }
 
 /// A class which mocks [GetWatchListTvStatus].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockGetWatchListTvStatus extends _i1.Mock
-    implements _i10.GetWatchListTvStatus {
+    implements _i2.GetWatchListTvStatus {
   MockGetWatchListTvStatus() {
     _i1.throwOnMissingStub(this);
   }
@@ -102,15 +93,15 @@ class MockGetWatchListTvStatus extends _i1.Mock
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<bool> execute(int? id) =>
+  _i4.Future<bool> execute(int? id) =>
       (super.noSuchMethod(Invocation.method(#execute, [id]),
-          returnValue: _i5.Future<bool>.value(false)) as _i5.Future<bool>);
+          returnValue: _i4.Future<bool>.value(false)) as _i4.Future<bool>);
 }
 
 /// A class which mocks [SaveWatchlistTvs].
 ///
 /// See the documentation for Mockito's code generation for more information.
-class MockSaveWatchlistTvs extends _i1.Mock implements _i11.SaveWatchlistTvs {
+class MockSaveWatchlistTvs extends _i1.Mock implements _i2.SaveWatchlistTvs {
   MockSaveWatchlistTvs() {
     _i1.throwOnMissingStub(this);
   }
@@ -122,19 +113,19 @@ class MockSaveWatchlistTvs extends _i1.Mock implements _i11.SaveWatchlistTvs {
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, String>> execute(_i7.TVDetail? tv) =>
+  _i4.Future<_i3.Either<_i2.Failure, String>> execute(_i2.TVDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#execute, [tv]),
-              returnValue: _i5.Future<_i3.Either<_i6.Failure, String>>.value(
-                  _FakeEither_1<_i6.Failure, String>(
+              returnValue: _i4.Future<_i3.Either<_i2.Failure, String>>.value(
+                  _FakeEither_1<_i2.Failure, String>(
                       this, Invocation.method(#execute, [tv]))))
-          as _i5.Future<_i3.Either<_i6.Failure, String>>);
+          as _i4.Future<_i3.Either<_i2.Failure, String>>);
 }
 
 /// A class which mocks [RemoveWatchlistTvs].
 ///
 /// See the documentation for Mockito's code generation for more information.
 class MockRemoveWatchlistTvs extends _i1.Mock
-    implements _i12.RemoveWatchlistTvs {
+    implements _i2.RemoveWatchlistTvs {
   MockRemoveWatchlistTvs() {
     _i1.throwOnMissingStub(this);
   }
@@ -146,10 +137,10 @@ class MockRemoveWatchlistTvs extends _i1.Mock
                   _FakeTvRepository_0(this, Invocation.getter(#repository)))
           as _i2.TvRepository);
   @override
-  _i5.Future<_i3.Either<_i6.Failure, String>> execute(_i7.TVDetail? tv) =>
+  _i4.Future<_i3.Either<_i2.Failure, String>> execute(_i2.TVDetail? tv) =>
       (super.noSuchMethod(Invocation.method(#execute, [tv]),
-              returnValue: _i5.Future<_i3.Either<_i6.Failure, String>>.value(
-                  _FakeEither_1<_i6.Failure, String>(
+              returnValue: _i4.Future<_i3.Either<_i2.Failure, String>>.value(
+                  _FakeEither_1<_i2.Failure, String>(
                       this, Invocation.method(#execute, [tv]))))
-          as _i5.Future<_i3.Either<_i6.Failure, String>>);
+          as _i4.Future<_i3.Either<_i2.Failure, String>>);
 }
