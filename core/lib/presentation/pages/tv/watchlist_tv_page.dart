@@ -5,6 +5,8 @@ import 'package:provider/provider.dart';
 class WatchlistTvsPage extends StatefulWidget {
   static const ROUTE_NAME = '/watchlist-tv';
 
+  const WatchlistTvsPage({super.key});
+
   @override
   _WatchlistTvsPageState createState() => _WatchlistTvsPageState();
 }
@@ -24,6 +26,7 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
     routeObserver.subscribe(this, ModalRoute.of(context)!);
   }
 
+  @override
   void didPopNext() {
     Provider.of<WatchlistTvNotifier>(context, listen: false)
         .fetchWatchlistTvs();
@@ -33,17 +36,17 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Watchlist'),
+        title: const Text('Watchlist'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Consumer<WatchlistTvNotifier>(
           builder: (context, data, child) {
-            if (data.watchlistState == RequestState.Loading) {
-              return Center(
+            if (data.watchlistState == RequestState.loading) {
+              return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (data.watchlistState == RequestState.Loaded) {
+            } else if (data.watchlistState == RequestState.loaded) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final tv = data.watchlistTvs[index];
@@ -53,7 +56,7 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
               );
             } else {
               return Center(
-                key: Key('error_message'),
+                key: const Key('error_message'),
                 child: Text(data.message),
               );
             }

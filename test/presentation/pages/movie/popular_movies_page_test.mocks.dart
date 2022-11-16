@@ -42,7 +42,7 @@ class MockPopularMoviesNotifier extends _i1.Mock
           this, Invocation.getter(#getPopularMovies))) as _i2.GetPopularMovies);
   @override
   _i2.RequestState get state => (super.noSuchMethod(Invocation.getter(#state),
-      returnValue: _i2.RequestState.Empty) as _i2.RequestState);
+      returnValue: _i2.RequestState.empty) as _i2.RequestState);
   @override
   List<_i2.Movie> get movies => (super.noSuchMethod(Invocation.getter(#movies),
       returnValue: <_i2.Movie>[]) as List<_i2.Movie>);

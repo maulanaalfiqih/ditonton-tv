@@ -43,7 +43,7 @@ class MockTopRatedTvNotifier extends _i1.Mock
       as _i2.GetTopRatedTvs);
   @override
   _i2.RequestState get state => (super.noSuchMethod(Invocation.getter(#state),
-      returnValue: _i2.RequestState.Empty) as _i2.RequestState);
+      returnValue: _i2.RequestState.empty) as _i2.RequestState);
   @override
   List<_i2.TV> get tvs =>
       (super.noSuchMethod(Invocation.getter(#tvs), returnValue: <_i2.TV>[])

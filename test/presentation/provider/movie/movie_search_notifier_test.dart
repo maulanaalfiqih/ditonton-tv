@@ -48,7 +48,7 @@ void main() {
       // act
       provider.fetchMovieSearch(tQuery);
       // assert
-      expect(provider.state, RequestState.Loading);
+      expect(provider.state, RequestState.loading);
     });
 
     test('should change search result data when data is gotten successfully',
@@ -59,7 +59,7 @@ void main() {
       // act
       await provider.fetchMovieSearch(tQuery);
       // assert
-      expect(provider.state, RequestState.Loaded);
+      expect(provider.state, RequestState.loaded);
       expect(provider.searchResult, tMovieList);
       expect(listenerCallCount, 2);
     });
@@ -71,7 +71,7 @@ void main() {
       // act
       await provider.fetchMovieSearch(tQuery);
       // assert
-      expect(provider.state, RequestState.Error);
+      expect(provider.state, RequestState.error);
       expect(provider.message, 'Server Failure');
       expect(listenerCallCount, 2);
     });

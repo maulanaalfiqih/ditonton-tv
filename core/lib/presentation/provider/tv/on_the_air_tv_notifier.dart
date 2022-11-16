@@ -6,7 +6,7 @@ class OnTheAirTvNotifier extends ChangeNotifier {
 
   OnTheAirTvNotifier({required this.getOnTheAirTvs});
 
-  RequestState _state = RequestState.Empty;
+  RequestState _state = RequestState.empty;
   RequestState get state => _state;
 
   List<TV> _tvs = [];
@@ -16,7 +16,7 @@ class OnTheAirTvNotifier extends ChangeNotifier {
   String get message => _message;
 
   Future<void> fetchOnTheAirTvs() async {
-    _state = RequestState.Loading;
+    _state = RequestState.loading;
     notifyListeners();
 
     final result = await getOnTheAirTvs.execute();
@@ -24,12 +24,12 @@ class OnTheAirTvNotifier extends ChangeNotifier {
     result.fold(
       (failure) {
         _message = failure.message;
-        _state = RequestState.Error;
+        _state = RequestState.error;
         notifyListeners();
       },
       (tvsData) {
         _tvs = tvsData;
-        _state = RequestState.Loaded;
+        _state = RequestState.loaded;
         notifyListeners();
       },
     );
