@@ -1,4 +1,4 @@
-import 'package:ditonton/common/exception.dart';
+import '../../../../core/lib/common/exception.dart';
 import 'package:ditonton/data/datasources/tv/tv_remote_data_source.dart';
 import 'package:ditonton/data/models/tv/tv_detail_model.dart';
 import 'package:ditonton/data/models/tv/tv_response.dart';

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:ditonton/common/failure.dart';
-import 'package:ditonton/common/state_enum.dart';
+import '../../../../core/lib/common/failure.dart';
+import '../../../../core/lib/common/state_enum.dart';
 import 'package:ditonton/domain/entities/movie/movie.dart';
 import 'package:ditonton/domain/usecases/movie/get_popular_movies.dart';
 import 'package:ditonton/presentation/provider/movie/popular_movies_notifier.dart';
