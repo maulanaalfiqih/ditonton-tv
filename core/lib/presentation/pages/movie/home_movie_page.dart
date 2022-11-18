@@ -1,10 +1,10 @@
+// ignore_for_file: library_private_types_in_public_api, constant_identifier_names
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:core/core.dart';
-
 import 'package:about/about.dart';
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:search/search.dart';
 
 class HomeMoviePage extends StatefulWidget {
@@ -19,11 +19,11 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-        () => Provider.of<MovieListNotifier>(context, listen: false)
-          ..fetchNowPlayingMovies()
-          ..fetchPopularMovies()
-          ..fetchTopRatedMovies());
+    Future.microtask(() {
+      context.read<NowPlayingMoviesBloc>().add(FetchNowPlayingMovies());
+      context.read<PopularMoviesBloc>().add(FetchPopularMovies());
+      context.read<TopRatedMoviesBloc>().add(FetchTopRatedMovies());
+    });
   }
 
   @override
@@ -91,14 +91,16 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 'Now Playing',
                 style: kHeading6,
               ),
-              Consumer<MovieListNotifier>(builder: (context, data, child) {
-                final state = data.nowPlayingState;
-                if (state == RequestState.loading) {
+              BlocBuilder<NowPlayingMoviesBloc, MovieState>(
+                  builder: (context, state) {
+                if (state is MovieLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return MovieList(data.nowPlayingMovies);
+                } else if (state is MovieHasData) {
+                  return MovieList(state.movies);
+                } else if (state is MovieHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }
@@ -108,14 +110,16 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 onTap: () =>
                     Navigator.pushNamed(context, PopularMoviesPage.ROUTE_NAME),
               ),
-              Consumer<MovieListNotifier>(builder: (context, data, child) {
-                final state = data.popularMoviesState;
-                if (state == RequestState.loading) {
+              BlocBuilder<PopularMoviesBloc, MovieState>(
+                  builder: (context, state) {
+                if (state is MovieLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return MovieList(data.popularMovies);
+                } else if (state is MovieHasData) {
+                  return MovieList(state.movies);
+                } else if (state is MovieHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }
@@ -125,14 +129,16 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedMoviesPage.ROUTE_NAME),
               ),
-              Consumer<MovieListNotifier>(builder: (context, data, child) {
-                final state = data.topRatedMoviesState;
-                if (state == RequestState.loading) {
+              BlocBuilder<TopRatedMoviesBloc, MovieState>(
+                  builder: (context, state) {
+                if (state is MovieLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return MovieList(data.topRatedMovies);
+                } else if (state is MovieHasData) {
+                  return MovieList(state.movies);
+                } else if (state is MovieHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }

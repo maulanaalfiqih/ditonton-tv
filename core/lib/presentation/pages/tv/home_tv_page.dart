@@ -1,8 +1,10 @@
+// ignore_for_file: constant_identifier_names, library_private_types_in_public_api
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:about/about.dart';
 import 'package:core/core.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:search/search.dart';
 
 class HomeTvPage extends StatefulWidget {
@@ -17,12 +19,12 @@ class _HomeTvPageState extends State<HomeTvPage> {
   @override
   void initState() {
     super.initState();
-    Future.microtask(
-        () => Provider.of<AiringTodayTvNotifier>(context, listen: false)
-          ..fetchAiringTodayTvs()
-          ..fetchOnTheAirTodayTvs()
-          ..fetchPopularTvs()
-          ..fetchTopRatedTvs());
+    Future.microtask(() {
+      context.read<AiringTodayTvsBloc>().add(FetchAiringTodayTvs());
+      context.read<OnTheAirTvsBloc>().add(FetchOnTheAirTvs());
+      context.read<PopularTvsBloc>().add(FetchPopularTvs());
+      context.read<TopRatedTvsBloc>().add(FetchTopRatedTvs());
+    });
   }
 
   @override
@@ -90,14 +92,16 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 'Airing Today',
                 style: kHeading6,
               ),
-              Consumer<AiringTodayTvNotifier>(builder: (context, data, child) {
-                final state = data.airingTodayState;
-                if (state == RequestState.loading) {
+              BlocBuilder<AiringTodayTvsBloc, TvState>(
+                  builder: (context, state) {
+                if (state is TvLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return TvList(data.airingTodayTvs);
+                } else if (state is TvHasData) {
+                  return TvList(state.tvs);
+                } else if (state is TvHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }
@@ -107,14 +111,15 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 onTap: () =>
                     Navigator.pushNamed(context, OnTheAirTvsPage.ROUTE_NAME),
               ),
-              Consumer<AiringTodayTvNotifier>(builder: (context, data, child) {
-                final state = data.onTheAirTvsState;
-                if (state == RequestState.loading) {
+              BlocBuilder<OnTheAirTvsBloc, TvState>(builder: (context, state) {
+                if (state is TvLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return TvList(data.onTheAirTvs);
+                } else if (state is TvHasData) {
+                  return TvList(state.tvs);
+                } else if (state is TvHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }
@@ -124,14 +129,15 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 onTap: () =>
                     Navigator.pushNamed(context, PopularTvsPage.ROUTE_NAME),
               ),
-              Consumer<AiringTodayTvNotifier>(builder: (context, data, child) {
-                final state = data.popularTvsState;
-                if (state == RequestState.loading) {
+              BlocBuilder<PopularTvsBloc, TvState>(builder: (context, state) {
+                if (state is TvLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return TvList(data.popularTvs);
+                } else if (state is TvHasData) {
+                  return TvList(state.tvs);
+                } else if (state is TvHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }
@@ -141,14 +147,15 @@ class _HomeTvPageState extends State<HomeTvPage> {
                 onTap: () =>
                     Navigator.pushNamed(context, TopRatedTvsPage.ROUTE_NAME),
               ),
-              Consumer<AiringTodayTvNotifier>(builder: (context, data, child) {
-                final state = data.topRatedTvsState;
-                if (state == RequestState.loading) {
+              BlocBuilder<TopRatedTvsBloc, TvState>(builder: (context, state) {
+                if (state is TvLoading) {
                   return const Center(
                     child: CircularProgressIndicator(),
                   );
-                } else if (state == RequestState.loaded) {
-                  return TvList(data.topRatedTvs);
+                } else if (state is TvHasData) {
+                  return TvList(state.tvs);
+                } else if (state is TvHasError) {
+                  return Text(state.message);
                 } else {
                   return const Text('Failed');
                 }

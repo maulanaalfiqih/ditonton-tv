@@ -7,58 +7,26 @@ final locator = GetIt.instance;
 
 void init() {
   // provider
-  locator.registerFactory(
-    () => MovieListNotifier(
-      getNowPlayingMovies: locator(),
-      getPopularMovies: locator(),
-      getTopRatedMovies: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => MovieDetailNotifier(
-      getMovieDetail: locator(),
-      getMovieRecommendations: locator(),
-      getWatchListStatus: locator(),
-      saveWatchlist: locator(),
-      removeWatchlist: locator(),
-    ),
-  );
-
-  locator.registerFactory(
-      () => PopularMoviesNotifier(getPopularMovies: locator()));
-  locator.registerFactory(
-      () => TopRatedMoviesNotifier(getTopRatedMovies: locator()));
-  locator.registerFactory(
-      () => WatchlistMovieNotifier(getWatchlistMovies: locator()));
-
-  //provider-tv
-
-  locator.registerFactory(
-    () => AiringTodayTvNotifier(
-      getAiringTodayTvs: locator(),
-      getOnTheAirTvs: locator(),
-      getPopularTvs: locator(),
-      getTopRatedTvs: locator(),
-    ),
-  );
-  locator.registerFactory(
-    () => TvDetailNotifier(
-      getTvDetail: locator(),
-      getTvRecommendations: locator(),
-      getWatchListTvStatus: locator(),
-      saveWatchlistTvs: locator(),
-      removeWatchlistTvs: locator(),
-    ),
-  );
-
-  locator.registerFactory(() => OnTheAirTvNotifier(getOnTheAirTvs: locator()));
-  locator.registerFactory(() => PopularTvNotifier(getPopularTvs: locator()));
-  locator.registerFactory(() => TopRatedTvNotifier(getTopRatedTvs: locator()));
-  locator
-      .registerFactory(() => WatchlistTvNotifier(getWatchlistTvs: locator()));
 
   // bloc
+  locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
+  locator.registerFactory(() => PopularMoviesBloc(locator()));
+  locator.registerFactory(() => TopRatedMoviesBloc(locator()));
+  locator.registerFactory(() => DetailMovieBloc(locator()));
+  locator.registerFactory(() => MovieRecommendationBloc(locator()));
+  locator.registerFactory(
+      () => WatchlistMovieBloc(locator(), locator(), locator(), locator()));
   locator.registerFactory(() => SearchBlocMovie(locator()));
+
+  // bloc tv
+  locator.registerFactory(() => AiringTodayTvsBloc(locator()));
+  locator.registerFactory(() => OnTheAirTvsBloc(locator()));
+  locator.registerFactory(() => PopularTvsBloc(locator()));
+  locator.registerFactory(() => TopRatedTvsBloc(locator()));
+  locator.registerFactory(() => DetailTvBloc(locator()));
+  locator.registerFactory(() => TvRecommendationBloc(locator()));
+  locator.registerFactory(
+      () => WatchlistTvBloc(locator(), locator(), locator(), locator()));
   locator.registerFactory(() => SearchBlocTv(locator()));
 
   // use case
