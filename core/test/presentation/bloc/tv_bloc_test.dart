@@ -363,7 +363,7 @@ void main() {
           wait: const Duration(milliseconds: 500),
           expect: () => [
             TvLoading(),
-            const LoadWatchlistData(true),
+            const LoadWatchlistTvData(true),
           ],
           verify: (bloc) => verify(mockGetWatchlistTvStatus.execute(tId)),
         );
@@ -380,7 +380,7 @@ void main() {
           wait: const Duration(milliseconds: 500),
           expect: () => [
             TvLoading(),
-            const LoadWatchlistData(false),
+            const LoadWatchlistTvData(false),
           ],
           verify: (bloc) => verify(mockGetWatchlistTvStatus.execute(tId)),
         );
