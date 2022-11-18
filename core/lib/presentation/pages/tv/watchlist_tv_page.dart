@@ -36,7 +36,7 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Watchlist'),
+        title: const Text('Watchlist Tv'),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -46,7 +46,7 @@ class _WatchlistTvsPageState extends State<WatchlistTvsPage> with RouteAware {
               return const Center(
                 child: CircularProgressIndicator(),
               );
-            } else if (state is TvHasData) {
+            } else if (state is WatchlistTvHasData) {
               return ListView.builder(
                 itemBuilder: (context, index) {
                   final tv = state.tvs[index];
