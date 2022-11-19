@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:flutter/services.dart';
 import 'package:http/io_client.dart';
 
@@ -17,7 +16,7 @@ class SslHelper {
 
   static Future<IOClient> createIoClient() async {
     final context = SecurityContext(withTrustedRoots: false);
-    final cert = await rootBundle.load('../certificate/_.themoviedb.org.pem');
+    final cert = await rootBundle.load('certificate/themoviedb.org.pem');
     final httpClient = HttpClient(context: context);
 
     context.setTrustedCertificatesBytes(cert.buffer.asUint8List());

@@ -6,8 +6,6 @@ import 'package:get_it/get_it.dart';
 final locator = GetIt.instance;
 
 void init() {
-  // provider
-
   // bloc
   locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
   locator.registerFactory(() => PopularMoviesBloc(locator()));
@@ -88,4 +86,5 @@ void init() {
 
   // external
   locator.registerLazySingleton(() => http.Client());
+  locator.registerLazySingleton(() => SslHelper.client);
 }

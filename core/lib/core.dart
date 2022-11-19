@@ -7,6 +7,7 @@ export 'utils/exception.dart';
 export 'utils/failure.dart';
 export 'utils/state_enum.dart';
 export 'utils/utils.dart';
+export 'utils/ssl_helper.dart';
 export 'data/datasources/db/database_helper.dart';
 export 'data/datasources/db/database_helper_tv.dart';
 export 'data/datasources/movie/movie_local_data_source.dart';
