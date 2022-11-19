@@ -1,4 +1,4 @@
-[![Codemagic build status](https://api.codemagic.io/apps/637462428067d031ccf78d32/637792edeb1711664fc761b7/status_badge.svg)](https://codemagic.io/apps/637462428067d031ccf78d32/637792edeb1711664fc761b7/latest_build)
+[![Codemagic build status](https://api.codemagic.io/apps/637462428067d031ccf78d32/637462428067d031ccf78d31/status_badge.svg)](https://codemagic.io/apps/637462428067d031ccf78d32/637462428067d031ccf78d31/latest_build)
 
 # a199-flutter-expert-project
 
@@ -51,4 +51,7 @@ Jika kamu menerapkan modular pada project, Anda dapat memanfaatkan berkas `test.
     ```
     Proses ini akan men-*generate* berkas `lcov.info` dan folder `coverage` terkait dengan laporan coverage.
 4. Tunggu proses testing selesai hingga muncul web terkait laporan coverage.
+
+Screenshoot Build CI 
+![image](https://user-images.githubusercontent.com/64852604/202751646-f4f747d1-a05b-44f7-b1da-24104039a90c.png)
 
