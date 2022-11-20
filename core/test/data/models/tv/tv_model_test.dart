@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  final tTvModel = TVModel(
+  const tTvModel = TVModel(
     backdropPath: 'backdropPath',
     genreIds: [1, 2, 3],
     id: 1,
@@ -19,7 +19,7 @@ void main() {
 
   final tTv = TV(
     backdropPath: 'backdropPath',
-    genreIds: [1, 2, 3],
+    genreIds: const [1, 2, 3],
     id: 1,
     originalName: 'originalName',
     originalLanguage: 'originalLanguage',

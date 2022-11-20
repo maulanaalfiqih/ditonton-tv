@@ -3,7 +3,7 @@ import 'package:core/core.dart';
 final testMovie = Movie(
   adult: false,
   backdropPath: '/muth4OYamXf41G2evdrLEg8d3om.jpg',
-  genreIds: [14, 28],
+  genreIds: const [14, 28],
   id: 557,
   originalTitle: 'Spider-Man',
   overview:
@@ -19,7 +19,7 @@ final testMovie = Movie(
 
 final testMovieList = [testMovie];
 
-final testMovieDetail = MovieDetail(
+const testMovieDetail = MovieDetail(
   adult: false,
   backdropPath: 'backdropPath',
   genres: [Genre(id: 1, name: 'Action')],
@@ -41,7 +41,7 @@ final testWatchlistMovie = Movie.watchlist(
   overview: 'overview',
 );
 
-final testMovieTable = MovieTable(
+const testMovieTable = MovieTable(
   id: 1,
   title: 'title',
   posterPath: 'posterPath',

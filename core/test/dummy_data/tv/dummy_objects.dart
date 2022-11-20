@@ -2,7 +2,7 @@ import 'package:core/core.dart';
 
 final testTv = TV(
   backdropPath: "/xAKMj134XHQVNHLC6rWsccLMenG.jpg",
-  genreIds: [80, 10765],
+  genreIds: const [80, 10765],
   id: 90462,
   originalName: "Chucky",
   originalLanguage: "en",
@@ -18,7 +18,7 @@ final testTv = TV(
 
 final testTvList = [testTv];
 
-final testTvDetail = TVDetail(
+const testTvDetail = TVDetail(
   backdropPath: "backdropPath",
   genres: [Genre(id: 1, name: 'Animation')],
   homepage: "https://google.com",
@@ -44,7 +44,7 @@ final testWatchlistTv = TV.watchlist(
   name: 'name',
 );
 
-final testTvTable = TVTable(
+const testTvTable = TVTable(
   id: 1,
   name: 'name',
   posterPath: 'posterPath',

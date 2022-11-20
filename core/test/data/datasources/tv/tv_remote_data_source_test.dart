@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
 import 'package:core/core.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
@@ -106,7 +108,7 @@ void main() {
   });
 
   group('get tv detail', () {
-    final tId = 1;
+    const tId = 1;
     final tTvDetail = TVDetailResponse.fromJson(
         json.decode(readJson('dummy_data/tv/tv_detail.json')));
 
@@ -137,7 +139,7 @@ void main() {
     final tTvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/tv/tv_recommendations.json')))
         .tvList;
-    final tId = 1;
+    const tId = 1;
 
     test('should return list of Tv Model when the response code is 200',
         () async {
@@ -168,7 +170,7 @@ void main() {
     final tSearchResult = TVResponse.fromJson(
             json.decode(readJson('dummy_data/tv/search_chucky.json')))
         .tvList;
-    final tQuery = 'Chucky';
+    const tQuery = 'Chucky';
 
     test('should return list of tv when response code is 200', () async {
       // arrange
