@@ -50,6 +50,35 @@ void main() {
     });
   });
 
+  group('get On The Air Tv', () {
+    final tTvList = TVResponse.fromJson(
+            json.decode(readJson('dummy_data/tv/tv_on_the_air.json')))
+        .tvList;
+
+    test('should return list of tvs when response is success (200)', () async {
+      // arrange
+      when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY')))
+          .thenAnswer((_) async =>
+              http.Response(readJson('dummy_data/tv/tv_on_the_air.json'), 200));
+      // act
+      final result = await dataSource.getOnTheAirTvs();
+      // assert
+      expect(result, tTvList);
+    });
+
+    test(
+        'should throw a ServerException when the response code is 404 or other',
+        () async {
+      // arrange
+      when(mockHttpClient.get(Uri.parse('$BASE_URL/tv/on_the_air?$API_KEY')))
+          .thenAnswer((_) async => http.Response('Not Found', 404));
+      // act
+      final call = dataSource.getOnTheAirTvs();
+      // assert
+      expect(() => call, throwsA(isA<ServerException>()));
+    });
+  });
+
   group('get Popular Tv', () {
     final tTvList = TVResponse.fromJson(
             json.decode(readJson('dummy_data/tv/tv_popular.json')))

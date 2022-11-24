@@ -77,7 +77,7 @@ void main() {
           .thenAnswer((_) async => Right(tMovieList));
       return searchBloc;
     },
-    act: (bloc) => bloc.add(const OnMovieQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnMovieQueryChanged(query: tQuery)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchLoading(),
@@ -95,7 +95,7 @@ void main() {
           .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
       return searchBloc;
     },
-    act: (bloc) => bloc.add(const OnMovieQueryChanged(tQuery)),
+    act: (bloc) => bloc.add(const OnMovieQueryChanged(query: tQuery)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchLoading(),
@@ -113,7 +113,7 @@ void main() {
           .thenAnswer((_) async => Right(tTvList));
       return searchBlocTv;
     },
-    act: (bloc) => bloc.add(const OnTvQueryChanged(tQuerytv)),
+    act: (bloc) => bloc.add(const OnTvQueryChanged(query: tQuerytv)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchLoading(),
@@ -131,7 +131,7 @@ void main() {
           .thenAnswer((_) async => const Left(ServerFailure('Server Failure')));
       return searchBlocTv;
     },
-    act: (bloc) => bloc.add(const OnTvQueryChanged(tQuerytv)),
+    act: (bloc) => bloc.add(const OnTvQueryChanged(query: tQuerytv)),
     wait: const Duration(milliseconds: 500),
     expect: () => [
       SearchLoading(),

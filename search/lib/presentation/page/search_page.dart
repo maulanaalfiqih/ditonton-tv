@@ -23,7 +23,9 @@ class SearchPage extends StatelessWidget {
           children: [
             TextField(
               onSubmitted: (query) {
-                context.read<SearchBlocMovie>().add(OnMovieQueryChanged(query));
+                context
+                    .read<SearchBlocMovie>()
+                    .add(OnMovieQueryChanged(query: query));
               },
               decoration: const InputDecoration(
                 hintText: 'Search title',

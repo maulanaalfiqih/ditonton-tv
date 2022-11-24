@@ -15,9 +15,11 @@ dependencies:
     path: ../core
   dartz: ^0.10.0-nullsafety.2
   provider: ^6.0.3
+  http: ^0.13.3
   equatable: ^2.0.2
   flutter_bloc: ^8.1.1
   rxdart: ^0.27.7
+  flutter_gen: ^5.1.0+1
 
 dev_dependencies:
   flutter_test:
@@ -26,6 +28,7 @@ dev_dependencies:
   mockito: ^5.0.8
   build_runner: ^2.0.4
   bloc_test: ^9.1.0
+  mocktail: ^0.3.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
