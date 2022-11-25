@@ -26,7 +26,7 @@ class _TvDetailPageState extends State<TvDetailPage> {
           .read<TvRecommendationBloc>()
           .add(FetchRecommendationTvs(widget.id));
     });
-    context.read<WatchlistTvBloc>().add(FetchWatchlistTvs());
+    context.read<WatchlistTvBloc>().add(LoadWatchlistTvStatus(widget.id));
   }
 
   @override

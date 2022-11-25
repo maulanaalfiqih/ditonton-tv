@@ -25,7 +25,9 @@ class _MovieDetailPageState extends State<MovieDetailPage> {
       context
           .read<MovieRecommendationBloc>()
           .add(FetchRecommendationMovies(widget.id));
-      context.read<WatchlistMovieBloc>().add(FetchWatchlistMovies());
+      context
+          .read<WatchlistMovieBloc>()
+          .add(LoadWatchlistMovieStatus(widget.id));
     });
   }
 
