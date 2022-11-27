@@ -14,9 +14,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  await SslHelper.initializing();
-
-  di.init();
+  await SSLHelper.init();
+  await di.init();
   runApp(MyApp());
 }
 

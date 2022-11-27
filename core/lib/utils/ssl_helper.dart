@@ -1,28 +1,12 @@
-import 'dart:io';
-import 'package:flutter/services.dart';
-import 'package:http/io_client.dart';
+import 'package:core/core.dart';
+import 'package:http/http.dart' as http;
 
-class SslHelper {
-  static IOClient? _client;
-
-  static IOClient get client => _client ?? IOClient();
-
-  static Future<void> initializing() async {
-    _client = await instance;
-  }
-
-  static Future<IOClient> get instance async =>
-      _client ??= await createIoClient();
-
-  static Future<IOClient> createIoClient() async {
-    final context = SecurityContext(withTrustedRoots: false);
-    final cert = await rootBundle.load('certificate/themoviedb.org.pem');
-    final httpClient = HttpClient(context: context);
-
-    context.setTrustedCertificatesBytes(cert.buffer.asUint8List());
-
-    httpClient.badCertificateCallback =
-        (X509Certificate cert, String host, int port) => false;
-    return IOClient(httpClient);
+class SSLHelper {
+  static Future<http.Client> get _instance async =>
+      _clientInstance ??= await Shared.createLEClient();
+  static http.Client? _clientInstance;
+  static http.Client get client => _clientInstance ?? http.Client();
+  static Future<void> init() async {
+    _clientInstance = await _instance;
   }
 }

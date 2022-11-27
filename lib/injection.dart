@@ -1,11 +1,10 @@
 import 'package:core/core.dart';
 import 'package:search/search.dart';
-import 'package:http/http.dart' as http;
 import 'package:get_it/get_it.dart';
 
 final locator = GetIt.instance;
 
-void init() {
+Future<void> init() async {
   // bloc
   locator.registerFactory(() => NowPlayingMoviesBloc(locator()));
   locator.registerFactory(() => PopularMoviesBloc(locator()));
@@ -85,6 +84,5 @@ void init() {
   locator.registerLazySingleton<DatabaseHelperTv>(() => DatabaseHelperTv());
 
   // external
-  locator.registerLazySingleton(() => http.Client());
-  locator.registerLazySingleton(() => SslHelper.client);
+  locator.registerLazySingleton(() => SSLHelper.client);
 }

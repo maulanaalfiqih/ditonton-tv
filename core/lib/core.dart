@@ -66,3 +66,4 @@ export 'presentation/bloc/movie/movie_bloc.dart';
 export 'presentation/bloc/tv/tv_bloc.dart';
 export 'presentation/widgets/movie_card_list.dart';
 export 'presentation/widgets/tv_card_list.dart';
+export 'utils/shared.dart';
